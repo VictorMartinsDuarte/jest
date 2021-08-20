@@ -15,7 +15,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('3 - Verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
+  // Referência operadores = https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Expressions_and_operators
   test('testa função add', () => {
     add = jest.fn((a, b) => a + b);
     expect(add(1, 2)).toEqual(3);
@@ -58,10 +58,12 @@ describe('3 - Verifica as funções e os mocks', () => {
   });
   test('testa função factorial', () => {
     factorial = jest.fn((a) => (a > 0 ? a * factorial(a - 1) : 1));
+    // Michael C. ajudou com referência do fatorial = https://www.ti-enxame.com/pt/javascript/qual-e-funcao-fatorial-mais-rapida-em-javascript/970711875/
     expect(factorial(5)).toEqual(120);
     expect(factorial(10)).toEqual(3628800);
     expect(factorial(3)).toEqual(6);
     expect(factorial(8)).toEqual(40320);
     expect(factorial(2)).toEqual(2);
+    expect(factorial(0)).toEqual(1);
   });
 });
