@@ -14,11 +14,9 @@ describe('1 - O retorno do telefonema', () => {
   test('atende', async () => {
     const resolve = await answerPhone(true);
     expect(resolve).toBe('Oi!');
-    // Insira seu teste assíncrono aqui
   });
   test('ocupado', async () => {
     const reject = await answerPhone(false).catch((error) => error.message);
     expect(reject).toBe('Infelizmente não podemos atender...');
-    // Insira seu teste assíncrono aqui
   });
 });
